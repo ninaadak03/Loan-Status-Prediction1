@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8dc4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4682b4;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4682b4;
+        }
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="submit"] {
+            width: calc(100% - 20px);
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #5a9bd3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Prediction Form</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select name="Gender" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Married">Married</label>
+                <select name="Married" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Dependents">Dependents</label>
+                <input type="number" name="Dependents" min="0" max="3" required>
+            </div>
+            <div class="form-group">
+                <label for="Education">Education</label>
+                <select name="Education" required>
+                    <option value="1">Graduate</option>
+                    <option value="0">Not Graduate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Self_Employed">Self Employed</label>
+                <select name="Self_Employed" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ApplicantIncome">Applicant Income</label>
+                <input type="number" name="ApplicantIncome" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="CoapplicantIncome">Coapplicant Income</label>
+                <input type="number" name="CoapplicantIncome" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="LoanAmount">Loan Amount</label>
+                <input type="number" name="LoanAmount" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="Loan_Amount_Term">Loan Amount Term (in months)</label>
+                <input type="number" name="Loan_Amount_Term" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="Credit_History">Credit History</label>
+                <select name="Credit_History" required>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Property_Area">Property Area</label>
+                <select name="Property_Area" required>
+                    <option value="2">Urban</option>
+                    <option value="1">Semiurban</option>
+                    <option value="0">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
